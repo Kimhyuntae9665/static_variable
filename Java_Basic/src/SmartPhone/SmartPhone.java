@@ -2,7 +2,7 @@ package SmartPhone;
 
 public class SmartPhone {
 	public String mynation;
-	public String myos;
+	public String myos;           //변수에도 public 을 붙여야지 다른 java 파일에서 import해서 사용이 가능하다
 	public String myowner;
 	public String mytelNumber;
 	
