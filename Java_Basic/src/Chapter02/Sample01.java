@@ -8,6 +8,7 @@ import java.util.Scanner;
 //게시물 수정 
 
 class Board{
+	int id;
 //	제목
 	String title;
 //	작성자 
@@ -21,6 +22,14 @@ class Board{
 	
 	void contractionPrint() { // 2회이상 사용하는 print문은 함수로 만들어 놓기 
 		System.out.println("게시물 구분자 : "+ this.writer+" / 게시물 제목 "+ this.title+" / 작성자 : "+this.writer);
+	}
+	
+	void detailPrint() {
+		System.out.println("title : "+title);
+		System.out.println("writer : "+writer);
+		System.out.println("writeDate : "+writeDate);
+		System.out.println("contents : "+this.contents);
+		System.out.println("like : "+this.like);
 	}
 
 	
@@ -54,27 +63,25 @@ public class Sample01 {
 //				입력이 완료되면 게시물이 자동 등록됨 
 //				등록이 완료되면 처음화면으로 돌아옴 
 				
-				for(Board board:Board_List) {
-					if(board!=null) continue;
+				for(int i=0;i<Board_List.length;i++) {
 					
-					Scanner scanner = new Scanner(System.in);
-					board = new Board();
-				
-				
-				
+//				for(Board board:Board_List) {
+					if(Board_List[i]!=null) continue;
+					
+					Board_List[i] = new Board();
+				System.out.println("구분자 id : ");
+				Board_List[i].id = i;
+				sc.nextLine();
 				System.out.println("타이틀 : ");
-				board.title = sc.nextLine();
+				Board_List[i].title = sc.nextLine();
 				sc.nextLine(); // 입력 buffer를 지워주는 역할 출력이 하나씩 되네 
 				System.out.println("작성자 : ");
-				board.writer = sc.nextLine();
-				
+				Board_List[i].writer = sc.nextLine();
 				System.out.println("작성 날짜 및 시간 : ");
-				board.writeDate = sc.nextLine();
-				
+				Board_List[i].writeDate = sc.nextLine();
 				System.out.println("내용 : ");
-				board.contents = sc.nextLine();
-				
-				board.contractionPrint();
+				Board_List[i].contents = sc.nextLine();
+				Board_List[i].contractionPrint();
 				
 				break;
 			}
@@ -99,10 +106,17 @@ public class Sample01 {
 					
 //					
 				}
-//				게시물 목록에서 특정 게시물 구분자를 입력하면 해당 게시물의 상세 내용을 보여줌 
+				
+				Scanner selector = new Scanner(System.in);
+//				게시물 목록에서 특정 게시물 구분자를 입력하면 해당 게시물의 상세 내용을 보여줌
+				System.out.println("게시물을 선택하세요. (-1을 입력하면 처음 화면으로 돌아갑니다.)");
+				int selectBoardId = selector.nextInt();
+				
+//				-1을 입력하면 처음 화면으로 돌아간다.
+				if(selectBoardId == -1) continue;
+				Board_List[selectBoardId].detailPrint();
 //				게시물 상세에서 수정하기를 선택하면 수정을 할 수 있음 
 //				수정이 완료되면 처음화면으로 돌아옴 
-				
 				
 			}
 //			
