@@ -3,6 +3,7 @@ package ExceptionHandling;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -73,6 +74,39 @@ public class Example05 {
 			System.out.println(number);
 		
 		}
+		
+		
+		List<String> arrayList = new ArrayList<String>();
+		List<String> linkedList = new LinkedList<String>();
+		
+		
+//		arrayList 작업시간 
+//		메모리 공간 많이 차지 하지 않지만 작업시간이 많이 길다 
+		long start  = System.currentTimeMillis();
+		
+		for(int i=0;i<200;i++) {
+			arrayList.add(0,String.valueOf(i));
+		}
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println("ArrayList 작업 시작 : "+(end - start ));
+		
+		
+		
+//		LinkedList 작업시간 
+//		메모리 공간 많이 차지하지만 작업시간 아주 작아 
+		start  = System.currentTimeMillis();
+		
+		for(int i=0;i<200;i++) {
+			linkedList.add(0,String.valueOf(i));
+		}
+		
+		end = System.currentTimeMillis();
+		
+		System.out.println("LinkedList 작업 시작 : "+(end - start ));
+		
+		
 		
 		
 		
