@@ -54,6 +54,7 @@ abstract class Example02 {
 //	 매서드에 static 과 abstract를 동시에 사용할 수 없음
 //	클래스에 final 과 abstract 를 동시에 사용할 수 없다
 //	abstract 메서드의 접근제어자는 private일 수 없다 
+//	final 과 private은 동시에 사용할 필요가 없다 
 	
 	public static void main(String[] args) {
 		
