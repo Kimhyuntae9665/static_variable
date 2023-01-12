@@ -9,7 +9,8 @@ public class Example005 {
 
 	public static void main(String[] args) {
 //		Map의 Generic은 2개
-//		Generic 자리에는 기본 type 올 수 없다 
+//		Generic 자리에는 기본 type 올 수 없다 (int,double,float) 등 불가 
+//		다형성 느낌 
 		Map<String, String> hashMap = new HashMap<String,String>();
 		
 //		HashMap 에 데이터를 추가할 땐 put!
