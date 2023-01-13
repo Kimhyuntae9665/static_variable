@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Sample01 {
+public class 총_집합_고객정보_생성_찾기까지 {
 
 	public static void main(String[] args) {
 		Random random = new Random();
